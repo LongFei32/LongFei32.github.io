@@ -8,3 +8,10 @@
 #navbar {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 }
+
+/* 手机上导航折叠成汉堡按钮，去掉半透明，保证在亮背景上看得见 */
+@media (max-width: 991.98px) {
+  #navbar-toggler-btn .animated-icon span {
+    background: #ffffff;
+  }
+}
