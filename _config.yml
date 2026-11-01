@@ -1,0 +1,94 @@
+# Hexo 站点配置
+# 完整说明：https://hexo.io/docs/configuration.html
+# 改完这个文件，需要重新 `hexo generate` 才会生效。
+
+# ===== 站点信息 =====
+title: 隆辉的博客
+subtitle: '脑机接口 · fMRI 解码 · 数学与计算机'
+description: '南方科技大学 / 深圳理工大学研究生，在中国科学院深圳先进技术研究院做脑信息解码。'
+keywords: 脑机接口, fMRI, 脑解码, 机器学习, 孙隆辉
+author: 孙隆辉
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# ===== 网址 =====
+# 部署到 GitHub Pages 后，这里要写成你的实际地址
+url: https://longfei32.github.io
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# ===== 目录 =====
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# ===== 写作 =====
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# ===== 首页 =====
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# ===== 分类与标签 =====
+default_category: uncategorized
+category_map:
+tag_map:
+
+# ===== 元数据 =====
+meta_generator: true
+
+# ===== 日期格式 =====
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+# ===== 分页 =====
+per_page: 10
+pagination_dir: page
+
+# ===== 包含/排除 =====
+include:
+exclude:
+ignore:
+
+# ===== 主题 =====
+theme: fluid
+
+# ===== 部署 =====
+# 生成好的 public/ 会被推到 gh-pages 分支，GitHub Pages 从该分支发布
+deploy:
+  type: git
+  repo: git@github.com:LongFei32/LongFei32.github.io.git
+  branch: gh-pages
