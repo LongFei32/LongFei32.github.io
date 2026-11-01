@@ -37,13 +37,13 @@ gd.ellipse([-S * 0.25, -S * 0.55, S * 1.05, S * 0.75], fill=(255, 255, 255, 16))
 avatar = Image.alpha_composite(avatar.convert("RGBA"), glow).convert("RGB")
 
 ad = ImageDraw.Draw(avatar)
-font = ImageFont.truetype(FONT_BOLD, 190)
-text = "SLH"
+font = ImageFont.truetype(FONT_BOLD, 230)
+text = "LF"
 bbox = ad.textbbox((0, 0), text, font=font)
 w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
 ad.text(((S - w) / 2 - bbox[0], (S - h) / 2 - bbox[1]), text, font=font, fill=(255, 255, 255))
 
-avatar.save(os.path.join(OUT, "avatar-slh.png"))
+avatar.save(os.path.join(OUT, "avatar-lf.png"))
 avatar.resize((64, 64), Image.LANCZOS).save(os.path.join(OUT, "favicon.png"))
 
 # ---------------- 头图 ----------------
@@ -69,6 +69,6 @@ for r in (620, 760, 900):
 banner = Image.alpha_composite(banner.convert("RGBA"), layer).convert("RGB")
 banner.save(os.path.join(OUT, "banner-default.jpg"), quality=88, optimize=True)
 
-for name in ("avatar-slh.png", "favicon.png", "banner-default.jpg"):
+for name in ("avatar-lf.png", "favicon.png", "banner-default.jpg"):
     p = os.path.join(OUT, name)
     print(f"{name:12s} {os.path.getsize(p)/1024:8.1f} KB")
