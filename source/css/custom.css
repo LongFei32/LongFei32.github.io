@@ -9,6 +9,20 @@
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 }
 
+/* 首页标语里用 \n 换行。
+   typed.js 不会把 \n 转成 <br>，要靠 white-space 让换行符生效。 */
+#subtitle {
+  white-space: pre-line;
+}
+
+/* 手机上字号小一点，两行标语更耐看，也不容易顶到屏幕边缘 */
+@media (max-width: 767.98px) {
+  #subtitle,
+  .typed-cursor {
+    font-size: 1.05rem;
+  }
+}
+
 /* 手机上导航折叠成汉堡按钮，去掉半透明，保证在亮背景上看得见 */
 @media (max-width: 991.98px) {
   #navbar-toggler-btn .animated-icon span {
