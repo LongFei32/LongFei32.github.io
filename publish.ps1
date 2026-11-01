@@ -15,6 +15,10 @@ npx hexo generate | Select-Object -Last 1
 
 Write-Host "[2/4] 部署到 GitHub Pages..." -ForegroundColor Cyan
 npx hexo deploy | Select-Object -Last 1
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "      部署失败，先解决上面的报错" -ForegroundColor Red
+    exit 1
+}
 
 Write-Host "[3/4] 提交源码..." -ForegroundColor Cyan
 git add -A
@@ -23,7 +27,13 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "      没有源码改动，跳过提交" -ForegroundColor DarkGray
 } else {
     git commit -m $Message | Out-Null
-    git push | Out-Null
+    # 先同步远端，避免"remote contains work you do not have"导致 push 被拒
+    git pull --rebase --autostash origin main 2>&1 | Out-Null
+    git push 2>&1 | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "      推送失败，运行 git status 看看冲突" -ForegroundColor Red
+        exit 1
+    }
     Write-Host "      已推送到 main" -ForegroundColor DarkGray
 }
 
