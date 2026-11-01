@@ -3,11 +3,11 @@
 # 改完这个文件，需要重新 `hexo generate` 才会生效。
 
 # ===== 站点信息 =====
-title: 隆辉的博客
+title: LongFei
 subtitle: '脑机接口 · fMRI 解码 · 数学与计算机'
 description: '南方科技大学 / 深圳理工大学研究生，在中国科学院深圳先进技术研究院做脑信息解码。'
-keywords: 脑机接口, fMRI, 脑解码, 机器学习, 孙隆辉
-author: 孙隆辉
+keywords: 脑机接口, fMRI, 脑解码, 机器学习
+author: LongFei
 language: zh-CN
 timezone: 'Asia/Shanghai'
 

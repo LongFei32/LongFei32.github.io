@@ -67,8 +67,8 @@ for r in (620, 760, 900):
            start=115, end=245, fill=(255, 255, 255, 20), width=2)
 
 banner = Image.alpha_composite(banner.convert("RGBA"), layer).convert("RGB")
-banner.save(os.path.join(OUT, "banner.jpg"), quality=88, optimize=True)
+banner.save(os.path.join(OUT, "banner-default.jpg"), quality=88, optimize=True)
 
-for name in ("avatar-slh.png", "favicon.png", "banner.jpg"):
+for name in ("avatar-slh.png", "favicon.png", "banner-default.jpg"):
     p = os.path.join(OUT, name)
     print(f"{name:12s} {os.path.getsize(p)/1024:8.1f} KB")
