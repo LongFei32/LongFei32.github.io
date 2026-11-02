@@ -8,3 +8,6 @@ public/
 _multiconfig.yml
 _shots/
 __pycache__/
+
+# 本地交接文档：含本机路径与 SSH key 位置，不随仓库公开
+博客交接提示词.md

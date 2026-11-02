@@ -770,11 +770,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: giscus
 
 
 #---------------------------
@@ -920,12 +920,19 @@ cusdis:
 # Based on GitHub Discussions, similar to Utterances
 # See: https://giscus.app/
 giscus:
-  repo:
-  repo-id:
-  category:
-  category-id:
+  # 评论存放的仓库，必须 public，且该仓库已安装 giscus App
+  # Repository that stores discussions. Must be public and have the giscus App installed.
+  repo: LongFei32/LongFei32.github.io
+  # 仓库的 node_id，不是仓库名！取法：gh api repos/{owner}/{repo} --jq .node_id
+  repo-id: R_kgDOVfIg3g
+  # Discussions 分类名。用 Announcements：只有你有权新建讨论，陌生人不能乱开帖
+  category: Announcements
+  # 分类的 node_id，取法：GraphQL 查 repository.discussionCategories
+  category-id: DIC_kwDOVfIg3s4DKMJa
   theme-light: light
   theme-dark: dark
+  # 文章与讨论的对应方式，pathname = 按页面路径匹配，站点路径固定最稳
+  # Options: pathname | url | title | og:title | specific
   mapping: pathname
   reactions-enabled: 1
   emit-metadata: 0
