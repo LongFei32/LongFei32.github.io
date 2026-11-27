@@ -76,6 +76,7 @@ a:hover { text-decoration: underline; }
   width: 190px;
   height: 210px;
   object-fit: cover;
+  object-position: center 22%;
   border-radius: 6px;
   display: block;
   margin: 0 auto;
