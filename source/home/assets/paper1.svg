@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#f5f7fa"/>
+  <rect x="1" y="1" width="298" height="198" fill="none" stroke="#d9e0ea" stroke-width="2"/>
+  <text x="150" y="104" text-anchor="middle" font-family="Segoe UI, Microsoft YaHei, sans-serif"
+        font-size="13" fill="#9aa6b6">论文配图 / 方法图</text>
+</svg>

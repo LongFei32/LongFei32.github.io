@@ -28,7 +28,9 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+# source/home/ 是学术主页（纯静态 HTML），原样复制到 /home/，不参与渲染
 skip_render:
+  - 'home/**'
 
 # ===== 写作 =====
 new_post_name: :title.md
